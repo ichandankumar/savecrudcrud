@@ -19,8 +19,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.2/axios.min.js"></script>
 <script>
     
-    function savelocal(event) {
-        event.preventDefault();
+    function savelocal(event) 
+        event.preventDefault(); 
         const name = event.target.username.value;
         const email = event.target.emailId.value;  
         const phonenumber = event.target.phonenumber.value;
@@ -30,17 +30,16 @@
             phonenumber:phonenumber
 
         }
+        window.addEventListener("DOMContentLoaded",() => {
         axios.post("https://crudcrud.com/api/1f9a153fe0784fe4901bba56e015ab75/appoinmentdata")
-        .then((response)=>{
+        .then((response)=> {
             console.log(response);
         })
-        .catch((err)=> {
-            console.log(err);
+        .catch((error)=> {
+            console.log(error)
         })
     
-        localStorage.setItem(obj.email, JSON.stringify(obj))
-        showUserOnScreen(obj)
-    }
+    })
         function showUserOnScreen(obj) {
             const parentElem = document.getElementById("listofitems")
             const childElement = document.createElement("li") 
